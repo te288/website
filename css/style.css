@@ -18,7 +18,8 @@ div.contents{margin-right : 0px; margin-left : 60px;width: 940px;}
 #cv{height:40px;margin-left : 60px;clear: both;}
 #selectlang{
     height:185px;width: 400px;float: right;
-    margin-right: 300px;padding-top:10px;padding-bottom:0px;
+    margin-right: 175px;padding-top:10px;padding-bottom:0px;
+    padding-left: 125px;
     text-align: left;}
 
 #icon{width: 200px;height:185px;float: left;
