@@ -1,15 +1,16 @@
 %% Input Parameter
-c       = 1.33;
+c       = 0.25;
 x_left  = -3;
-x_right = 5*10;
-x_num   = 5*50;
+x_right = 10;
+x_num   = 50;
 x       = linspace(x_left, x_right, x_num);
+x_exact = linspace(x_left, x_right, 5*x_num);
 dx      = (x_right-x_left)/(x_num-1);
-% phi_init= 0*x; phi(10:15) = 1.0; % Potition data
+% phi_init= 0*x; phi(k*10:k*15) = 1.0; % Potition data
 phi_init= exp(-x.^2);     
 
 dt      = 0.2;
-t_max   = 15;
+t_max   = 60;
 t       =  0;
 
 %% Plot
@@ -33,7 +34,7 @@ name_sim = title(ax_sim,['数値解:t = ',num2str(t,'%04.1f'),'[s]']);
 ax_sim.XLim = [x_left, x_right];
 ax_sim.YLim = [-0.1, 1.1];
 
-p_exact = plot(ax_exact, x, exp(-(x-c*t).^2));
+p_exact = plot(ax_exact, x_exact, exp(-(x_exact-c*t).^2));
 p_sim   = plot(ax_sim, x, phi_init);
 
 %% Simulation
@@ -55,7 +56,7 @@ for t = 0:dt:t_max
     name_exact = title(ax_exact,['解析解:t = ',num2str(t,'%04.1f'),'[s]']);
     name_sim = title(ax_sim,['数値解:t = ',num2str(t,'%04.1f'),'[s]']);
     p_sim.YData = phi_n1;
-    p_exact.YData = exp(-(x-c*t).^2);
+    p_exact.YData = exp(-(x_exact-c*t).^2);
     ax_sim.YLim = [-0.1, 1.1];
     ax_sim.XLim = [x_left, x_right];
     ax_exact.YLim = [-0.1, 1.1];
@@ -66,9 +67,9 @@ for t = 0:dt:t_max
     
     phi_n = phi_n1;
     % save figure
-%     filename = sprintf('result/advection/upwind/plotUPWIND_%04.1f.png', t); % file name 
+%      filename = sprintf('result/advection/upwind/plotUPWIND_%04.1f.png', t); % file name 
     filename = sprintf('result/advection/compare/plotUPWIND_compareV%04.1f.png', t); % file name 
 %     filename = sprintf('result/advection/upwind/plot_vibration%04.1f.png', t); % file name 
-%     saveas(fig, filename); % save figure as png    
+    saveas(fig, filename); % save figure as png    
 
 end
