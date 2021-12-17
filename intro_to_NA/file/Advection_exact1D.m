@@ -8,13 +8,10 @@ xlim([-3,10]);ylim([-0.1,1.1]);
 name = title(['t = ',num2str(t),'[s]']);
 
 
-for t = 0:0.2:15 % timedata
-    name = title(['t = ',num2str(t),'[s]']);
+for t = 0:0.2:15 % time data
+    name = title(['t = ',num2str(t,'%04.1f'),'[s]']);
     p.YData = exp(-(x-c*t).^2);
     drawnow;
     filename = sprintf('result/advection/exact/plotEXACT%04.1f.png', t); % file name 
     saveas(fig, filename); % save figure as png
 end
-    
-
-

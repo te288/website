@@ -43,12 +43,15 @@ phi_n  = phi_init;
 h = c*dt/dx;
 % stop
 for t = 0:dt:t_max
-    for i = 2:x_num-1
-        phi_n1(i) = (1-h)*phi_n(i)+h*phi_n(i-1);
-    end
+%     for i = 2:x_num
+%         phi_n1(i) = (1-h)*phi_n(i)+h*phi_n(i-1);
+%     end
+    % This code is faster than for loop
+    phi_n1(2:end) = (1-h)*phi_n(2:end)...
+                    +     h*phi_n(1:end-1);
+                      
     % update boundary
     phi_n1(1)   = phi_n1(2);
-    phi_n1(end) = phi_n1(end-1);
     
     % update plot
 %     p.YData  = phi_n1;
@@ -67,9 +70,9 @@ for t = 0:dt:t_max
     
     phi_n = phi_n1;
     % save figure
-%      filename = sprintf('result/advection/upwind/plotUPWIND_%04.1f.png', t); % file name 
-    filename = sprintf('result/advection/compare/plotUPWIND_compareV%04.1f.png', t); % file name 
-%     filename = sprintf('result/advection/upwind/plot_vibration%04.1f.png', t); % file name 
-    saveas(fig, filename); % save figure as png    
+%       filename = sprintf('result/advection/upwind/plotUPWIND_%04.1f.png', t); % file name 
+    filename = sprintf('result/advection/compare/plotUPWIND_compare%04.1f.png', t); % file name 
+%      filename = sprintf('result/advection/upwind/plot_vibration%04.1f.png', t); % file name 
+%     saveas(fig, filename); % save figure as png    
 
 end
