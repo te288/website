@@ -13,9 +13,9 @@ v_hist = [v0]; % array to hold velocity value
 
 while true
     % Update V, t, i
-    v = %-% Write Your Code %-%
-    t = %-% Write Your Code %-%
-    i = %-% Write Your Code %-%
+    v = v_hist(i) + dt*(g - (k/m)*v_hist(i));
+    t = t + dt;
+    i = i+1;
     if t >= t_max
         break
     end

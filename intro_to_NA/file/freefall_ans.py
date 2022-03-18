@@ -18,9 +18,9 @@ t_hist = [0]  # list to hold t value
 ## Simulation
 while True:
   ## Update V, t, i
-  v = #-# Write Your Code Here #-# # V
-  t = #-# Write Your Code Here #-# # t
-  i = #-# Write Your Code Here #-# # i
+  v = v_hist[i]+dt*(g-k/m*v_hist[i]) # V
+  t = t + dt                         # t
+  i = i + 1                          # i
 
   ## judgement of Time
   if t >= t_max:
@@ -38,7 +38,7 @@ v_exact = m*g/k*(1-np.exp(-k*t_exact/m))
 fig = plt.figure()
 ax = fig.add_subplot(1,1,1)
 ax.plot(t_hist, v_hist, label='Simulation')
-ax.scatter(t_exact[0::3], v_exact[0::3], label='Exact Solution', color = "#ff7f50")
+ax.scatter(t_exact[0::3], v_exact[0::3], label='Exact', color = "#ff7f50")
 ax.set_xlabel('t [s]')
 ax.set_ylabel('v [m/s]')
 ax.set_title('Velocity change')
