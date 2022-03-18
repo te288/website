@@ -19,6 +19,6 @@ for i in t:
   ax.set_ylim(-0.1,1.1)
   ax.set_xlim(-3, 10)
   ax.set_title('t=%05.1f'%(i)+'[s]')
-  fig.savefig('result/Advection_exact%05.1f'%(i)+'.png') # Save figure
+  fig.savefig('Advection_exact%05.1f'%(i)+'.png') # Save figure
   ax.cla()
 

@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>数値解析入門（作成途中）</title>
+        <title>数値解析入門</title>
         <!--MathJaxの設定-->
         <script type="text/x-mathjax-config">
             MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
@@ -24,8 +24,10 @@
             </h2>
                 春休み期間に実施予定。各自PythonかMATLABを利用できるノートパソコンを持参のこと。環境構築が難しい場合はGoogleアカウントを作成しておけば大丈夫です。
                 <ul>
-                    <li>第1回：○月○日実施</li>
-                    <li>第2回：○月○日実施</li>
+                    <li>第1回：○月○日実施　常微分方程式の時間積分</li>
+                    <li>第2回：○月○日実施　1次元移流方程式</li>
+                    <li>第3回：○月○日実施　1次元拡散方程式</li>
+                    <li>第4回：○月○日実施　陰解法・アニメーション作成法など</li>
                 </ul>
             
             <!--コンテンツはじまり-->
@@ -39,11 +41,9 @@
             </h3>
             <ul>
                 <li>GoogleColab</li>
-                <li><s>Pythonライブラリの追加</s> → 扱いません</li>
                 <li><s>MATLABの代わりにOctave</s> → 扱いません</li>
-                <li><s>Fortranとgfortran</s> → 扱いません</li>
+                <li>Fortranとgfortran</li>
                 <li>基本的なターミナル操作</li>
-                <li>Gifアニメーションを作る（ImageMagick）</li>
             </ul>
 
             <!--数値計算法-->
@@ -54,10 +54,8 @@
             <ul>
                 <li><a href="material/01_ODE.pdf">常微分方程式の時間積分</a></li>
                 <li><a href="material/02_Advection1.pdf">1次元移流方程式</a></li>
-                <li>1次元拡散方程式</li>
-                <li>1次元移流拡散方程式</li>            
-                <li>2次元拡散方程式</li>
-                <li>ヒストリーマッチング</li>
+                <!--<li><a href="material/03_Diffusion.pdf">1次元拡散方程式（陽解法）</a></li>-->
+                <li>拡散方程式（陰解法）</li> 
             </ul>
             </div>
 
@@ -67,10 +65,9 @@
                 3.可視化
             </h3>
             <ul>
-                <li>$x$-$y$プロット</li>
+                <li>Gifアニメーションを作る（ImageMagick）</li>
                 <li>3次元データの可視化</li>
                 <li>コンターマップ</li>
-                <li>$x$-$y$-$z$プロット</li>
             </ul>
             </div>
 
@@ -86,36 +83,28 @@
                     <li><a href="file/freefall.m">MATLAB</a></li>
                     <li><a href="file/freefall.py">Python</a></li>
                 </ul>
-
-                <!--移流拡散方程式-->
+                <!--移流方程式-->
                 <h3 style="border-bottom: solid rgb(101, 144, 173);">
-                    移流拡散方程式
+                    移流方程式
                 </h3>                
                 <ul>                    
                     <li><a href="file/Advection_exact1D.m">1次元移流方程式・解析解（MATLAB）</a></li>
                     <li><a href="file/Advection_exact1D.py">1次元移流方程式・解析解（Python）</a></li>
-                    <li><a href="file/1Dスカラー移流拡散.xlsx">1次元移流拡散方程式Excel</a></li>
-                    <li>Python</li>
                 </ul>                
-
-                <!--Reservoir Engineering-->
+                <!--拡散方程式-->
                 <h3 style="border-bottom: solid rgb(101, 144, 173);">
-                    トレーサーシミュレーション
+                    拡散方程式
                 </h3>                
-                <ul>
-                    <li><a href="file/1Dスカラー移流拡散.xlsx">Excel</a></li>
-                    <li>MATLAB</li>
+                <ul>                                        
+                    <li><a href="file/Diffusion1D.ipynb">1次元拡散方程式・陽解法（Python, .ipynb形式）</a></li>
+                    <li><a href="file/diffusion1d.py">1次元拡散方程式・陽解法（Python, .py形式）</a></li>
+                    <li><a href="file/1Dスカラー移流拡散.xlsx">1次元移流拡散方程式（Excel）</a></li>
                 </ul>                                
+
             </div>
             
             <!--コンテンツ終わり-->
         </main>
-        
-        <div style="text-align: center;">
-            <a href="../index.html" style="color: white;">
-                <br>戻る<br>
-            </a>
-        </div>
         
     </body>
 </html>
