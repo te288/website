@@ -25,6 +25,10 @@ end
 
 %% Plot result
 t_hist = 0:dt:t_max;
-plot(t_hist, v_hist);
+scatter(t_hist(1:3:end), v_hist(1:3:end),'DisplayName','Numerical Ans.');
+hold on
+plot(t_hist, m*g/k*(1-exp(-k*t_hist./m)), 'DisplayName', 'Exact Sol.');
 xlabel('t [s]');
 ylabel('v [m/s]');
+legend()
+hold off
