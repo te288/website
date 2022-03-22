@@ -13,5 +13,5 @@ for t = 0:0.2:15 % time data
     p.YData = exp(-(x-c*t).^2);
     drawnow;
     filename = sprintf('plotEXACT%04.1f.png', t); % file name 
-    saveas(fig, filename); % save figure as png
+    %saveas(fig, filename); % save figure as png
 end

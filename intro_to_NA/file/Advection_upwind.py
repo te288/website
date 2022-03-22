@@ -33,7 +33,7 @@ phi_old = np.copy(phi_init) # phi for nth time step
 phi_new = np.copy(phi_init) # phi for n+1th time step
 
 # figure for plot
-fig = plt.figure(figsize=(12, 5))
+fig = plt.figure(figsize=(12, 7))
 ax_exact = fig.add_subplot(211)
 ax_num   = fig.add_subplot(212)
 ax_exact.set_title('Exact solution')
