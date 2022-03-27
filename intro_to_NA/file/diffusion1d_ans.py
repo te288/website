@@ -2,10 +2,12 @@
 # このプログラムでは、各タイムステップごとの計算結果をpngファイルで保存可能です。
 # Gifアニメーション作成でこのプログラムを使います。
 
+
 ## Import Modules
 import numpy as np
 from scipy.stats import hmean
 import matplotlib.pyplot as plt
+
 
 def PlotSavePressure(x, P, t, L):
   # fig = plt.figure()
@@ -20,6 +22,7 @@ def PlotSavePressure(x, P, t, L):
   fig.savefig('Diffsuion_ans.png'.format(t))
   # plt.clf()
   return
+
 
 ## Input Parmeters
 L = 2*np.pi # Length of Reservoir[m]
@@ -49,6 +52,7 @@ Pb_right = 0 # Pressure Value at x = L
 # P_init = np.ones(N)      # Initial Pressure
 P_init = np.sin(x)
 
+
 ## Simulation
 P_old  = np.copy(P_init) # Pressure at n-th step
 P_new  = np.copy(P_init) # Pressure at n+1-th step
@@ -58,6 +62,7 @@ n = 0
 # Plot Initial Condition
 fig = plt.figure()
 PlotSavePressure(x, P_new, t, L)
+print('Start simulation, dt:{0:07.3f} tmax:{1:07.3f}'.format(dt, tmax))
 while True:
   for i in range(1, N-1): # for P[1] ~ P[N-2]
     # alpha = #-# Write Your Code Here #-#
@@ -117,4 +122,3 @@ while True:
     
 PlotSavePressure(x, P_new, t, L)
 plt.show()
-
