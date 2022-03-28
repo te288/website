@@ -41,32 +41,50 @@ title(ax1, 'Pressure Diffusion 1D');
 hold(ax1, 'on');
 while true
     for i = 2:N-1
-        alpha = %-% Write Your Code Here %-%
-        lam_w = %-% Write Your Code Here %-%
-        lam_e = %-% Write Your Code Here %-%
+        alpha = dt / (phi(i)*c(i));
+        lam_w = harmmean([k(i-1), k(i)])/mu;
+        lam_e = harmmean([k(i+1), k(i)])/mu;
         % A = %-% Write Your Code Here %-%
         % B = %-% Write Your Code Here %-%
         % C = %-% Write Your Code Here %-%
+        A = lam_e * alpha / (dx^2);C = lam_w * alpha / (dx^2);
+        B = 1 - A - C;
         P_new(i) = A*P_old(i+1) + B*P_old(i) + C*P_old(i-1);
     end
     
     % P(1)
     if B_left == 1 % Neumann Condition
-        %-% Write Your Code Here %-%
-
+        alpha = dt / (phi(1)*c(1));
+        lam_w = harmmean([k(1), k(1)])/mu;
+        lam_e = harmmean([k(1+1), k(1)])/mu;
+        A = lam_e * alpha / (dx^2);C = lam_w * alpha / (dx^2);
+        B = 1 - A - C;
+        P_new(1) = A*P_old(2) + B*P_old(1) + C*P_old(1);
     else % Dirichlet Condition
-        %-% Write Your Code Here %-%
+        alpha = dt / (phi(1)*c(1));
+        lam_w = harmmean([k(1), k(1)])/mu;
+        lam_e = harmmean([k(1+1), k(1)])/mu;
+        A = lam_e * alpha / (dx^2);C = lam_w * alpha / (dx^2);
+        B = 1 - A - C;
+        P_new(1) = A*P_old(2) + B*P_old(1) + C*(2*Pb_right - P_old(1));
     end
-
     % P(N);
     if B_right == 1 % Neumann Condition;
-        %-% Write Your Code Here %-%
-
+        alpha = dt / (phi(N)*c(N));
+        lam_w = harmmean([k(N-1), k(N)])/mu;
+        lam_e = harmmean([k(N), k(N)])/mu;
+        A = lam_e * alpha / (dx^2);C = lam_w * alpha / (dx^2);
+        B = 1 - A - C;
+        P_new(N) = A*P_old(N) + B*P_old(N) + C*P_old(N-1);
     else % Dirichlet Condition ;
-        %-% Write Your Code Here %-%
+        alpha = dt / (phi(N)*c(N));
+        lam_w = harmmean([k(N-1), k(N)])/mu;
+        lam_e = harmmean([k(N), k(N)])/mu;
+        A = lam_e * alpha / (dx^2);C = lam_w * alpha / (dx^2);
+        B = 1 - A - C;
+        P_new(N) = A*(2*Pb_right- P_old(N)) + B*P_old(N) + C*P_old(N-1);
     end
 
-    
     % Update Values, time step and Loop counter
     P_old = P_new;
     t = t + dt;

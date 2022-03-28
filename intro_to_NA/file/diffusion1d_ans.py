@@ -43,10 +43,10 @@ dt   = 0.005   # dt [s]
 nout = 500  # output result ever nout step[s]
 # Variable to decide Boundary condition
 # 1 -> Neumann, 0 -> Dirichlet
-B_left  = 0 # Boundary at Left (x = 0)
-B_right = 0 # Boundary at right(x = L)
-Pb_left  = 0 # Pressure Value at x = 0 
-Pb_right = 0 # Pressure Value at x = L
+B_right  = 0 # Boundary at right (x = 0)
+B_left   = 0 # Boundary at left (x = L)
+Pb_right = 0 # Pressure Value at right (x = 0) 
+Pb_left  = 0 # Pressure Value at left (x = L)
 
 ## Initial Conditions
 # P_init = np.ones(N)      # Initial Pressure

@@ -34,10 +34,10 @@ dt   = 0.005   # dt [s]
 nout = 500  # output result ever nout step[s]
 # Variable to decide Boundary condition
 # 1 -> Neumann, 0 -> Dirichlet
-B_right = 0 # Boundary at right(x = 0) 
-B_left  = 0 # Boundary at Left (x = L)
-Pb_right = 0 # Pressure Value at x = 0
-Pb_left  = 0 # Pressure Value at x = L
+B_right = 0 # Boundary at right(x = L) 
+B_left  = 0 # Boundary at Left (x = 0)
+Pb_right = 0 # Pressure Value at x = L
+Pb_left  = 0 # Pressure Value at x = 0
 
 ## Initial Conditions
 # P_init = np.ones(N)      # Initial Pressure
@@ -55,6 +55,8 @@ PlotPressure(x, P_new, t, L)
 while True:
   for i in range(1, N-1): # for P[1] ~ P[N-2]
     alpha = #-# Write Your Code Here #-#
+    lam_w = #-# Write Your Code Here #-#
+    lam_e = #-# Write Your Code Here #-#
     A = #-# Write Your Code Here #-#
     B = #-# Write Your Code Here #-#
     C = #-# Write Your Code Here #-#
