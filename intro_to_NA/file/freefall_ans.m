@@ -6,29 +6,22 @@ v0   = 0.0; % Initial velocity [m/s]
 dt   = 0.1; % time step for simulation [s]
 t_max =  10; % time which simulation is stopped [s]
 
-%% simulation
-t = 0; % time
+%% Calculation
+t = 0;
 i = 1; % counter
 v_hist = [v0]; % array to hold velocity value
-
 while true
-    % Update V, t, i
     v = v_hist(i) + dt*(g - (k/m)*v_hist(i));
     t = t + dt;
-    i = i+1;
     if t >= t_max
         break
     end
-    % Add Data
-    v_hist = [v_hist v]; 
+    i = i+1;
+    v_hist = [v_hist v]; % this code is not actually good.
 end
 
 %% Plot result
 t_hist = 0:dt:t_max;
-scatter(t_hist(1:3:end), v_hist(1:3:end),'DisplayName','Numerical Ans.');
-hold on
-plot(t_hist, m*g/k*(1-exp(-k*t_hist./m)), 'DisplayName', 'Exact Sol.');
+plot(t_hist, v_hist);
 xlabel('t [s]');
 ylabel('v [m/s]');
-legend()
-hold off
