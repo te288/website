@@ -52,18 +52,18 @@ while true
     
     % P(1)
     if B_left == 1 % Neumann Condition
-        %-% Write Your Code Here %-%
+        P_new(1) = %-% Write Your Code Here %-%
 
     else % Dirichlet Condition
-        %-% Write Your Code Here %-%
+        P_new(1) = %-% Write Your Code Here %-%
     end
 
     % P(N);
     if B_right == 1 % Neumann Condition;
-        %-% Write Your Code Here %-%
+        P_new(N) = %-% Write Your Code Here %-%
 
     else % Dirichlet Condition ;
-        %-% Write Your Code Here %-%
+        P_new(N) =%-% Write Your Code Here %-%
     end
 
     
