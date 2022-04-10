@@ -1,15 +1,5 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import matplotlib.pyplot as plt
 import numpy as np
-
-
-# In[7]:
-
 
 def PlotPhi(axis, x, phi, t):
     # function for line plot
@@ -30,9 +20,6 @@ def ScatPhi(axis, x, phi, t):
     return
 
 
-# In[8]:
-
-
 ## Input Parameters
 c = 0.25 # Speed [m/s]
 x_left = -3 # left side of x coordinate[m]
@@ -45,15 +32,10 @@ num_loop = 0 # Loop counter for simulation[-]
 num_out  = 25# plot ever num_out time step[-]
 
 
-# In[9]:
-
-
 ## Initial Condition
 x = np.linspace(x_left, x_right, x_num, endpoint=True) # x coordinate system[m]
 phi_init = np.exp(-x**2) # initial distribution of phi
 
-
-# In[10]:
 
 
 ## Simulation
@@ -94,10 +76,3 @@ while True:
 ax_exact.legend(loc='upper left')
 ax_num.legend(loc='upper left')
 plt.show()
-
-
-# In[ ]:
-
-
-
-

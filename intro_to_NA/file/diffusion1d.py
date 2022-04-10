@@ -21,7 +21,7 @@ tmax = 20 # Time to stop simlation [s]
 dt   = 0.005   # dt [s]
 nout = 500  # output result ever nout step[s]
 # Variable to decide Boundary condition
-#  0-> Neumann, 1-> Dirichlet
+#  1-> Neumann, 0-> Dirichlet
 B_right = 1 # Boundary at right(x = 0) 
 B_left  = 1 # Boundary at Left (x = L)
 Pb_right = 0 # Pressure Value at x = 0
@@ -66,12 +66,13 @@ while True:
   P_old = np.copy(P_new)
   t = t + dt
   n = n + 1
-  if t >= tmax:
-    break
+
   if n%nout == 0:
     print('{0}th Time step {1:05.2f}'.format(n, t))
     plt.plot(x, P_new, label='t={0:05.2f}'.format(t))
-
+  
+  if t >= tmax:
+    break
     
 plt.plot(x, P_new, label='t={0:05.2f}'.format(t)) # Plot Final Distribution
 plt.title('Pressure Diffusion 1D')

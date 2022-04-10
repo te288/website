@@ -89,14 +89,15 @@ while true
     P_old = P_new;
     t = t + dt;
     n = n + 1;
-    if t >= tmax
-      break
-    end
     
     if mod(n,nout) == 0
         plot(ax1, x, P_new, 'DisplayName',[num2str(t,'%05.2f'),'[s]'])
         hold(ax1, 'on');
         disp([num2str(n, '%04d'),'th time step',num2str(t, '%05.2f')])
+    end
+
+    if t >= tmax
+      break
     end
 end
 
