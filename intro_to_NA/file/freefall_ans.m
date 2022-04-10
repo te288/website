@@ -10,13 +10,16 @@ t_max =  10; % time which simulation is stopped [s]
 t = 0;
 i = 1; % counter
 v_hist = [v0]; % array to hold velocity value
+v_old = v0;
 while true
-    v = v_hist(i) + dt*(g - (k/m)*v_hist(i));
+    v = v_old + dt*(g - (k/m)*v_hist(i));
     t = t + dt;
+    i = i+1;
+    v_old = v;
+    
     if t >= t_max
         break
-    end
-    i = i+1;
+    end    
     v_hist = [v_hist v]; % this code is not actually good.
 end
 

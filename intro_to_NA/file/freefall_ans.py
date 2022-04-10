@@ -14,12 +14,16 @@ t = 0 # time [s]
 i = 0  # counter
 v_hist = [v0] # list to hold velocity value
 t_hist = [0]  # list to hold t value
+
+v_old = v0
 while True:
-  v = v_hist[i]+dt*(g-k/m*v_hist[i]) # recurrence formula
+  v = v_old+dt*(g-k/m*v_hist[i]) # recurrence formula
   t += dt
+  i += 1
+  v_old = v
   if t > t_max:
     break
-  i += 1
+  
   t_hist.append(t)
   v_hist.append(v)
 
@@ -36,3 +40,4 @@ ax.set_xlabel('t [s]')
 ax.set_ylabel('v [m/s]')
 ax.set_title('Velocity change')
 ax.legend()
+plt.show()

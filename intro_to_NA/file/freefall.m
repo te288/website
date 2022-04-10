@@ -11,11 +11,13 @@ t = 0; % time
 i = 1; % counter
 v_hist = [v0]; % array to hold velocity value
 
+v_old = v0;
 while true
     % Update V, t, i
     v = %-% Write Your Code %-%
     t = %-% Write Your Code %-%
     i = %-% Write Your Code %-%
+    v_old = %-% Write Your Code %-%
     if t >= t_max
         break
     end

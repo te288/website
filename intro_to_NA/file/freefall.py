@@ -15,13 +15,14 @@ i = 0  # counter
 v_hist = [v0] # list to hold velocity value
 t_hist = [0]  # list to hold t value
 
+v_old = v0
 ## Simulation
 while True:
   ## Update V, t, i
   v = #-# Write Your Code Here #-# # V
   t = #-# Write Your Code Here #-# # t
   i = #-# Write Your Code Here #-# # i
-
+  v_old = #-# Write Your Code Here #-# # i
   ## judgement of Time
   if t >= t_max:
     break
