@@ -17,15 +17,15 @@ t_hist = [0]  # list to hold t value
 
 v_old = v0
 while True:
-  v = v_old+dt*(g-k/m*v_hist[i]) # recurrence formula
+  v_new = v_old+dt*(g-k/m*v_old) # recurrence formula
   t += dt
   i += 1
-  v_old = v
+  v_old = v_new
   if t > t_max:
     break
   
   t_hist.append(t)
-  v_hist.append(v)
+  v_hist.append(v_new)
 
 ## Exact solution
 t_exact = np.array(t_hist)

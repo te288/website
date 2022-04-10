@@ -19,7 +19,7 @@ v_old = v0
 ## Simulation
 while True:
   ## Update V, t, i
-  v = #-# Write Your Code Here #-# # V
+  v_new = #-# Write Your Code Here #-# # V
   t = #-# Write Your Code Here #-# # t
   i = #-# Write Your Code Here #-# # i
   v_old = #-# Write Your Code Here #-# # i
@@ -29,7 +29,7 @@ while True:
   
   ## Add Data to lists
   t_hist.append(t)
-  v_hist.append(v)
+  v_hist.append(v_new)
 
 ## Exact solution
 t_exact = np.array(t_hist)
