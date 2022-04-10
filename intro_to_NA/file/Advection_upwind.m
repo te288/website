@@ -39,7 +39,8 @@ while true
 
     % numerical solution
     for i = 2:x_num
-        phi_new(i) = phi_old(i) - c*dt*(phi_old(i)-phi_old(i-1))/(x(i)-x(i-1));
+        phi_new(i) = phi_old(i); %- Write Your code here! -%
+
     end
 
     % updata
@@ -47,16 +48,18 @@ while true
     num_loop = num_loop + 1;
     t = t + dt;
 
-    % judge time step and output
-    if (t > t_max) || ( t== t_max)
-        break
-    end
+
     if mod(num_loop, num_out) == 0
         disp([num2str(num_loop, '%04d'),'th iteration : ', num2str(t,'%04.2f'), 's'])
         plot(ax_exact, x, phi_exact, "DisplayName", [num2str(t,'%04.1f'),'s']);
         hold(ax_exact,"on");
         plot(ax_num, x, phi_new, "DisplayName", [num2str(t,'%04.1f'),'s']);
         hold(ax_exact,"on");
+    end
+
+    % judge time step and output
+    if (t > t_max) || ( t== t_max)
+        break
     end
 end
 
