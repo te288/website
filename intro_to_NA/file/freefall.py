@@ -27,6 +27,7 @@ while True:
   if t >= t_max:
     break
   
+  
   ## Add Data to lists
   t_hist.append(t)
   v_hist.append(v_new)
