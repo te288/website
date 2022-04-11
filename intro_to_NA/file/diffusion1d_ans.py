@@ -17,8 +17,8 @@ def PlotSavefig(x, P, t, L):
   plt.ylim(-1,1)
   plt.grid()
   plt.title('Pressure Diffusion 1D@{0:05.2f}[s]'.format(t))
-  # fig.savefig('t={0:05.2f}.png'.format(t)) #画像保存には20行目と21行目も実行
-  # plt.clf()
+  fig.savefig('t={0:05.2f}.png'.format(t)) #画像保存には20行目と21行目も実行
+  plt.clf()
 
 
 ## Input Parmeters
