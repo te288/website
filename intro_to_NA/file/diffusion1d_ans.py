@@ -17,18 +17,19 @@ def PlotSavefig(x, P, t, L):
   plt.ylim(-1,1)
   plt.grid()
   plt.title('Pressure Diffusion 1D@{0:05.2f}[s]'.format(t))
-  # fig.savefig('t={0:05.2f}.png'.format(t))
+  # fig.savefig('t={0:05.2f}.png'.format(t)) #画像保存には20行目と21行目も実行
   # plt.clf()
 
+
 ## Input Parmeters
-L = 2*np.pi # Length of Reservoir[m]
-N = 100 # Number of Control Volume[-]
-k = 0.2*np.ones(N) # Permiability[m^2]
+L   = 2*np.pi # Length of Reservoir[m]
+N   = 100 # Number of Control Volume[-]
+k   = 0.2*np.ones(N) # Permiability[m^2]
 phi = np.ones(N) # Porosity[m^2]
-c = np.ones(N) # Compressibility[Pa^-1]
-mu= 1 # Viscosity of Fluid[Pa^-1]
-dx = L/N # Size of Control Volume[m]
-x = np.zeros(N) # x coordinate[m]
+c   = np.ones(N) # Compressibility[Pa^-1]
+mu  = 1 # Viscosity of Fluid[Pa*s]
+dx  = L/N # Size of Control Volume[m]
+x   = np.zeros(N) # x coordinate[m]
 x[0] = dx/2
 for i in range(1, N):
   x[i] = x[i-1] + dx
@@ -39,10 +40,10 @@ dt   = 0.005   # dt [s]
 nout = 500  # output result ever nout step[s]
 # Variable to decide Boundary condition
 #  1> Neumann, 0> Dirichlet
-B_right = 0 # Boundary at right(x = 0) 
-B_left  = 0 # Boundary at Left (x = L)
-Pb_right = 0 # Pressure Value at x = 0
-Pb_left  = 0 # Pressure Value at x = L
+B_right = 0 # Boundary at right(x = L) 
+B_left  = 0 # Boundary at Left (x = 0)
+Pb_right = 0 # Pressure Value at x = L
+Pb_left  = 0 # Pressure Value at x = 0
 
 ## Initial Conditions
 # P_init = np.ones(N)      # Initial Pressure
