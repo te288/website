@@ -55,7 +55,7 @@ while True:
     t      = t + dt
 
     # judge time step and output
-    if t > t_max:
+    if t >= t_max:
         break
     if num_loop%num_out == 0:
         print('{0:03d}th iteration, {1:05.2f}[s]'.format(num_loop, t))
