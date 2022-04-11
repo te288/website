@@ -22,8 +22,8 @@ dt   = 0.005   # dt [s]
 nout = 500  # output result ever nout step[s]
 # Variable to decide Boundary condition
 #  1-> Neumann, 0-> Dirichlet
-B_right = 1 # Boundary at right(x = L) 
-B_left  = 1 # Boundary at Left (x = 0)
+BC_right = 0 # Boundary at right(x = L) 
+BC_left  = 0 # Boundary at Left (x = 0)
 Pb_right = 0 # Pressure Value at x = L
 Pb_left  = 0 # Pressure Value at x = 0
 
@@ -51,13 +51,13 @@ while True:
     P_new[i] = A*P_old[i-1] + B*P_old[i] + C*P_old[i+1]
   
   # P[0]
-  if B_left == 1: # Neumann Condition
+  if BC_left == 1: # Neumann Condition
     P_new[0] = #-# Write Your Code Here #-#
   else: # Dirichlet Condition 
     P_new[0] = #-# Write Your Code Here #-#
 
   # P[N-1]
-  if B_left == 1: # Neumann Condition
+  if BC_left == 1: # Neumann Condition
     P_new[N-1] = #-# Write Your Code Here #-#
   else: # Dirichlet Condition 
     P_new[N-1] = #-# Write Your Code Here #-#

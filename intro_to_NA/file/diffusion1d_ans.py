@@ -40,8 +40,8 @@ dt   = 0.005   # dt [s]
 nout = 500  # output result ever nout step[s]
 # Variable to decide Boundary condition
 #  1> Neumann, 0> Dirichlet
-B_right = 0 # Boundary at right(x = L) 
-B_left  = 0 # Boundary at Left (x = 0)
+BC_right = 0 # Boundary at right(x = L) 
+BC_left  = 0 # Boundary at Left (x = 0)
 Pb_right = 0 # Pressure Value at x = L
 Pb_left  = 0 # Pressure Value at x = 0
 
@@ -72,7 +72,7 @@ while True:
     P_new[i] = A*P_old[i-1] + B*P_old[i] + C*P_old[i+1]
   
   # P[0]
-  if B_left == 1: # Neumann Condition
+  if BC_left == 1: # Neumann Condition
     alpha = dt / (phi[0]*c[0])
     lam_w = hmean([k[0], k[0]])/mu
     lam_e = hmean([k[0+1], k[0]])/mu
@@ -88,7 +88,7 @@ while True:
     P_new[0] = A*P_old[1] + B*P_old[0] + C*(2*Pb_left - P_old[0])    
   
   # P[N-1]
-  if B_right == 1: # Neumann Condition
+  if BC_right == 1: # Neumann Condition
     alpha = dt / (phi[N-1]*c[N-1])
     lam_w = hmean([k[N-2], k[N-1]])/mu
     lam_e = hmean([k[N-1], k[N-1]])/mu
