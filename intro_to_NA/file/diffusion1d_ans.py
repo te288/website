@@ -16,8 +16,9 @@ def PlotSavefig(x, P, t, L):
   plt.xlim(0, L)
   plt.ylim(-1,1)
   plt.grid()
-  plt.title('Pressure Diffusion 1D@{0:05.2f}[s]'.format(t))
-  fig.savefig('t={0:05.2f}.png'.format(t)) #画像保存には20行目と21行目も実行
+  plt.title('Pressure Diffusion 1D')
+  plt.legend()
+  fig.savefig('t={0:05.2f}.png'.format(t)) # save plot
   plt.clf()
 
 
@@ -54,7 +55,7 @@ P_old  = np.copy(P_init) # Pressure at n-th step
 P_new  = np.copy(P_init) # Pressure at n+1-th step
 t = 0
 n = 0
-fig = plt.figure()
+fig = plt.figure(figsize=(10, 6))
 # Plot Initial Condition
 PlotSavefig(x, P_new, t, L)
 while True:
