@@ -25,8 +25,8 @@ phi = 1     # Porosity[-]
 c   = 1     # Compressibility[Pa^-1]
 mu  = 1     # Viscosity of Fluid[Pa*s]
 Q   = np.zeros(N) # Source vector[m^2]
-Tm  = np.zeros([N,N]) # transmissibility Matrix
-B   = np.zeros([N,N]) # Volume accumulation Matrix
+
+
 dx  = L/N # Size of Control Volume[m]
 x   = np.zeros(N) # x coordinate[m]
 x[0]= dx/2
@@ -49,18 +49,15 @@ Pb_left  = 0 # Pressure Value at x = 0
 P_init = np.sin(x)
 
 ## define Q, Tm, B
-
 # Tm
-T = k*A/(mu*dx)
-for i in range(0, N-1):
-    Tm[i,i]   = #-# Write Your Code Here #-#
-    Tm[i,i+1] = #-# Write Your Code Here #-#
-    Tm[i+1,i] = #-# Write Your Code Here #-#
-Tm[N-1, N-1]  = #-# Write Your Code Here #-#
+Tm  = np.zeros([N,N]) # transmissibility Matrix
+#-# Write Your Code Here #-#
+#-# Define elements of Tm #-#
 
 # B
-for i in range(0, N):
-    B[i,i] = #-# Write Your Code Here #-#
+B   = np.zeros([N,N]) # Volume accumulation Matrix
+#-# Write Your Code Here #-#
+#-# Define elements of B #-#
 
 # Boundary Condition and Q
 if BC_left == 0:
