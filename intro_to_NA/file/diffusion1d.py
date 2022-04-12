@@ -41,7 +41,7 @@ t = 0
 n = 0
 plt.plot(x, P_new, label='t={0:05.2f}'.format(t)) # Plot Initial Condition
 while True:
-  for i in range(1, N-1): # for P[2] ~ P[N-1]
+  for i in range(1, N-1): # for P[1] ~ P[N-2]
     alpha = dt / (phi[i]*c[i])
     lam_w = hmean([k[i-1], k[i]])/mu
     lam_e = hmean([k[i+1], k[i]])/mu
@@ -50,7 +50,7 @@ while True:
     C = #-# Write Your Code Here #-#
     P_new[i] = A*P_old[i-1] + B*P_old[i] + C*P_old[i+1]
   
-  # P[0]
+  # P[0] CV#1
   if BC_left == 1: # Neumann Condition
     alpha = dt / (phi[i]*c[i])
     lam_w = hmean([k[i-1], k[i]])/mu
@@ -62,7 +62,7 @@ while True:
     lam_e = hmean([k[i+1], k[i]])/mu
     P_new[0] = #-# Write Your Code Here #-#
 
-  # P[N-1]
+  # P[N-1] #CV#N
   if BC_left == 1: # Neumann Condition
     P_new[N-1] = #-# Write Your Code Here #-#
   else: # Dirichlet Condition 
