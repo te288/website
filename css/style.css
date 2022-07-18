@@ -10,9 +10,8 @@ main{
 /*index.html*/
 
 .index-header{
-    margin-top: 0;padding-top: 0;border-top: 0cm;
+    margin-top: 0;padding-top: 0;border-top: 0cm; height: 150px;
                             }
-h1.pagetitle{margin-left: 0px;margin-right: 160px}
 header {
     display: flex;
     width: 100%;
@@ -27,7 +26,7 @@ header {
     padding: 10px;
   }
 
-h2.index{margin-left: 0px;margin-right: 0px; padding-left: 15px;}
+h2.index{margin-left: 0px;margin-right: 0px; padding-left: 15px; padding-right: 15px;}
 div.contents{padding-right : 30px; margin-left : 30px;width: 940px;}
 
 
