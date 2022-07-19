@@ -5,28 +5,37 @@ body{
 }
 
 main{
-    width: 1500px;margin-left: auto;margin-right: auto;
+    width: 1000px;margin-left: auto;margin-right: auto;
 }
 /*index.html*/
 
 .index-header{
    height: 150px;
                             }
-header {
+
+
+  header {
     display: flex;
     width: 100%;
     height: 100px;
+    background-color: darkgrey;
     align-items: center;
-
-    background: url(../img/IMG_44712.jpg)center / cover;;
+    background: url(../img/IMG_44712.jpg)center / cover;
   }
-.menu-item {
+   
+  .title {
+    margin-right: auto;
+    margin-left: 15px;
+    color: white;
+  }
+   
+  .menu-item {
     list-style: none;
     display: inline-block;
-    padding: 0px;
-    margin-left: 100px;
-    margin-right: 0px;
+    padding: 10px;
+    margin: 5px;
   }
+
 
 h2.index{margin-left: 0px;margin-right: 0px; padding-left: 15px; padding-right: 15px;}
 div.contents{padding-right : 30px; margin-left : 30px;width: 940px;}
